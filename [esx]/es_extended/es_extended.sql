@@ -62,6 +62,9 @@ INSERT INTO `jobs` VALUES ('unemployed','Unemployed');
 -- Gangs --
 -----------
 
+ALTER TABLE `users` ADD `gang` text COLLATE utf8mb3_bin NOT NULL DEFAULT 'nogang' AFTER `job_grade`;
+ALTER TABLE `users` ADD `gang_grade` int(11) NOT NULL DEFAULT 0 AFTER `gang`;
+
 CREATE TABLE `gangs` (
   `name` varchar(50) COLLATE utf8mb3_bin NOT NULL,
   `label` varchar(50) COLLATE utf8mb3_bin DEFAULT NULL,
